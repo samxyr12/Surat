@@ -1,0 +1,129 @@
+name: Build APK Surat Online
+
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Siapkan project Android (sudah dibungkus di file ini)
+        run: |
+          mkdir proj
+          cd proj
+          base64 -d <<'B64END' | tar xz
+          H4sIAAAAAAAAA+w9+3faRrP5OX/FVjmngV6QQTyc2MYpxtihMbYvkOT2fP2OzyItsEWvqwcxbfK/35mVBJIQYBLHve3HntNa7M7u
+          zs5rZ2ZXinzw7LuXEpTDWk38hZL+K57LNaVeqpardaUC9YeH5eozUvv+qD175rsedQh55liWtwluW/vftMgHQ5/rmjx2qKYzeeq5
+          jz8HMrhera7lv1I+TPK/rBweVp6R0uOjslr+w/lv6/6Ymy758zmBwrWcpFqGTE3NsbgmU9vWuUo9bplSnsyY48ITkV7Jh3JFItg6
+          JyOquyzRe2xZY5ClseGGj0WXOTOuMjc+SFWuykpykC/P/2py/McV+cBlnsfNsfv9TMA2/a+Vyyn9r9Qq5b3+P0UJ9L9LTTpmBjO9
+          0BA4zLZc7lkOZ5FtwBKocy6/qDDojJkt6OdQPVYdiNKtGPvWcrxF4xfQcY3ZzNSYqc57zLV0H63LRgS6lsZkENNcL1150exc3d1c
+          3932bn5ptwZ3vfbtTT//rStAJJHdt471O1M92aQGIw0i9X2Hejemzk0mPeemqvsay0lHYMGk/N/VcskHgP539gF39v/Kperh3v97
+          khLw//v6gFvsf7m+wv9KrVba2/+nKDv4fw/28cB8Pg9HCMdFC+raVBVmFLu71LifO7KLFtUKLSoCQpvNddbXpgBZqT0XlRobUV/3
+          WpY54uOYLY9h19G2jSxsPTeDkZX6og64P2ZeOGF1UR26qS3YZaChnK6/DreEslxaDn9wQC6p6XHyO59SQnVqUI/AHuS7ZMgcf0gn
+          JDehDvzUOJ1OuMPJwXIjEjoYrPGCMx3o3PcccMykApHOmv323fveFT7/Jk08z3aPDg7EGuWxJ3vqwW+SFG1ezxejXTDq+U5i/4vN
+          Avh7js/ivULy39hI03g31/IdlbWgGcg95Dr35tD9FzqjHwKCyB/avX4HtuLyYYq0O3SK4z6Y2wnEHaYz6rJYjRBHt8tNPpq3TTrU
+          GQrBMhwJRow29KXbsXQIuGHrwukQMpSzdeqNLMdISPiIO2wIEx9FD8WhZRxVKhAClaR8Pmuczd1BE1w6Rsbm/x8EPIH9dx31O/oA
+          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
+          B64END
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build APK
+        working-directory: proj
+        run: gradle :app:assembleDebug --no-daemon --stacktrace
+
+      - name: Ganti nama APK
+        run: cp proj/app/build/outputs/apk/debug/app-debug.apk SuratOnline.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SuratOnline-apk
+          path: SuratOnline.apk
+
+      - name: Buat Release (link unduh langsung)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "build-${{ github.run_number }}" SuratOnline.apk --repo "$GITHUB_REPOSITORY" --title "Surat Online build ${{ github.run_number }}" --notes "APK debug Surat Online"
