@@ -507,4 +507,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "build-${{ github.run_number }}" SuratOnline.apk --repo "$GITHUB_REPOSITORY" --title "Surat Online build ${{ github.run_number }}" --notes "APK Surat Online"
+          gh release create "build-${{ github.run_number }}" SuratOnline.apk --repo "$GITHUB_REPOSITORY" --title "Surat Online versi ${{ github.run_number }}" --notes "APK Surat Online versi ${{ github.run_number }}"
