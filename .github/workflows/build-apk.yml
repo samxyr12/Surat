@@ -797,7 +797,6 @@ jobs:
           bdMo//c+dK1uzda7jomBNioFjBvJCnynJ7v77D67z+6z++w+u8/us/vsPrvP7rP77D67z+6z++w+
           u8/us/vsPrvP7rP77D67z+6z++w+u8/us/vsPrvP7rP77D67z+6z++w+/82f/x+xzW/6APgCAA==
           B64END
-          echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > app/google-services.json
 
       - uses: actions/setup-java@v4
         with:
